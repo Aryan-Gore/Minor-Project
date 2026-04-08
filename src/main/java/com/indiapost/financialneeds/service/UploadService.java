@@ -30,14 +30,22 @@ public class UploadService {
     public UploadResult processCSV(MultipartFile file, String userId,
                                    String userName) throws IOException {
         List<String[]> rows = new ArrayList<>();
-        // CSVReader reads the file line by line
         try (CSVReader reader = new CSVReader(
                 new InputStreamReader(file.getInputStream()))) {
-            reader.readNext(); // skip header row
+
             String[] line;
+            boolean isFirst = true;
+
             while ((line = reader.readNext()) != null) {
+                if (isFirst) {
+                    isFirst = false; // skip header
+                    continue;
+                }
                 rows.add(line);
             }
+
+        } catch (Exception e) {
+            System.out.println("CSV Error: " + e.getMessage());
         }
         return processRows(rows, file.getOriginalFilename(),
                 userId, userName, "CSV");

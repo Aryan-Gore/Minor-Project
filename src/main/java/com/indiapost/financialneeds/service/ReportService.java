@@ -3,8 +3,11 @@ package com.indiapost.financialneeds.service;
 import com.indiapost.financialneeds.model.Recommendation;
 import com.indiapost.financialneeds.model.Village;
 import com.indiapost.financialneeds.repository.*;
-import com.itextpdf.text.*;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.*;
+import com.itextpdf.text.Font;
 import org.springframework.stereotype.Service;
 import java.io.ByteArrayOutputStream;
 import java.util.*;
@@ -100,4 +103,5 @@ public class ReportService {
         pdf.close();
         return out.toByteArray();
     }
+
 }
