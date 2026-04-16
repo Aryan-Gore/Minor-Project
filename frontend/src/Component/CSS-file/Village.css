@@ -1,0 +1,71 @@
+/* Wrapper (center content like login page) */
+.villages-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+/* Card */
+.villages-card {
+  width: 90%;
+  max-width: 900px;
+  background: #f5f5f5;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.villages-card h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Table */
+.villages-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header */
+.villages-table thead {
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+}
+
+.villages-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Body */
+.villages-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* Hover */
+
+/* Remove last border */
+.villages-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .villages-card {
+    width: 95%;
+  }
+
+  .villages-table th,
+  .villages-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

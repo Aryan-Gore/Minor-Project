@@ -1,0 +1,29 @@
+/* Upload Box */
+.upload-box {
+  border: 2px dashed #bbb;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  background: #fafafa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover */
+.upload-box:hover {
+  border-color: #4facfe;
+  background: #f0f8ff;
+}
+
+/* Hide original input */
+.upload-box input {
+  display: none;
+}
+
+/* Label styling */
+.upload-label {
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+}

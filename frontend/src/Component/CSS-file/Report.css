@@ -1,0 +1,72 @@
+/* Wrapper (center inside dashboard content) */
+.report-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  
+}
+
+/* Card (login style) */
+.report-card {
+  width: 350px;
+  background: #f5f5f5;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+ 
+}
+
+/* Card hover */
+.report-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Title */
+.report-card h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Empty text */
+.report-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Each scheme item */
+.report-item {
+  background: white;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.report-item:hover {
+  background: #f0f8ff;
+  transform: scale(1.02);
+}
+
+/* Text spacing */
+.report-item p {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+/* Highlight scheme code */
+.report-item strong {
+  color: #4facfe;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .report-card {
+    width: 90%;
+  }
+}

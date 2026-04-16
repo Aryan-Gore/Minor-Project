@@ -1,0 +1,74 @@
+/* Wrapper (center like login page) */
+.rec-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+/* Card */
+.rec-card {
+  width: 90%;
+  max-width: 800px;
+  background: #f5f5f5;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.rec-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Table */
+.rec-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header */
+.rec-table thead {
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+}
+
+.rec-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Body */
+.rec-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* Hover effect */
+.rec-table tr:hover {
+  background: #f0f8ff;
+}
+
+/* Remove last border */
+.rec-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .rec-card {
+    width: 95%;
+  }
+
+  .rec-table th,
+  .rec-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

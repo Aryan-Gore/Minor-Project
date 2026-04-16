@@ -1,0 +1,97 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Full Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: #eef2f7;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  padding: 25px;
+  color: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 3px 0 15px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Menu List */
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+/* Menu Items */
+.menu li {
+  margin: 12px 0;
+}
+
+/* Links */
+.menu a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 12px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.menu a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateX(6px);
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  padding: 30px;
+  background: linear-gradient(120deg, #fdfbfb, #ebedee);
+  overflow-y: auto;
+}
+
+/* Card Style (use inside pages like upload, reports etc.) */
+.card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+/* Card Hover */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Buttons */
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Button hover */
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

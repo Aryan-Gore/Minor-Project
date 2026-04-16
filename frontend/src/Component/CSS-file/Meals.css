@@ -1,0 +1,51 @@
+/* Wrapper (center like login page) */
+.mela-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+/* Card */
+.mela-card {
+  width: 350px;
+  background: #f5f5f5;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Title */
+.mela-card h2 {
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* List */
+.mela-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Item */
+.mela-card li {
+  background: white;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+/* Hover */
+.mela-card li:hover {
+  background: #f0f8ff;
+  transform: scale(1.02);
+}
+
+/* Date style */
+.mela-card span {
+  color: #666;
+  font-size: 12px;
+}
