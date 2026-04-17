@@ -508,9 +508,9 @@ Python scores each scheme using demographic ratios:
 
 | Member | Role | Responsibility |
 |---|---|---|
-| Aryan | Backend Developer | Spring Boot REST API, MongoDB, JWT auth, file upload parsing, PDF generation |
-| Aryan | AI/ML Developer | Python FastAPI scoring engine, seasonal logic |
-| Friend | Frontend Developer | React UI, all screens, API integration, charts |
+| Aryan Gore | Backend Developer | Spring Boot REST API, MongoDB, JWT auth, file upload parsing, PDF generation |
+| Ayushi Rajpoot | AI/ML Developer | Python FastAPI scoring engine, seasonal logic |
+| Jayesh Khatke | Frontend Developer | React UI, all screens, API integration, charts |
 
 ---
 
