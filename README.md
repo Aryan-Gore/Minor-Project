@@ -514,18 +514,6 @@ Python scores each scheme using demographic ratios:
 
 ---
 
-## 📄 Documents
-
-All project documents are available in the project folder:
-
-- `IndiaPost_SRS_IEEE.docx` — Software Requirements Specification (IEEE format)
-- `IndiaPost_SpringBoot_Complete.docx` — Complete Spring Boot code with learning notes
-- `IndiaPost_Python_Complete.docx` — Complete Python ML service code
-- `IndiaPost_Frontend_Spec_v1.1.docx` — Frontend specification for React developer
-- `IndiaPost_System_Explanation.docx` — Plain-language system explanation
-- `IndiaPost_UML_Diagrams.docx` — All 8 UML diagrams
-
----
 
 ##  License
 
