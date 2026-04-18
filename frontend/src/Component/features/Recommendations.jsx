@@ -3,49 +3,28 @@ import "../CSS-file/Recommendation.css";
 
 function Recommendations() {
   const [recs, setRecs] = useState([]);
-  const [villagesMap, setVillagesMap] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const token = window.__authToken;
+    const token = window.__authToken; // ✅ fixed
 
-    if (!token) {
-      setError("Not logged in");
-      setLoading(false);
-      return;
-    }
+    if (!token) { setError("Not logged in"); return; }
 
-    // 🔥 1. Fetch recommendations
     fetch("http://localhost:8080/api/recommendations", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {
-        if (!res.ok) throw new Error();
+        if (!res.ok) throw new Error("Failed to load");
         return res.json();
       })
       .then(data => setRecs(data))
-      .catch(() => setError("Failed to load recommendations"));
-
-    // 🔥 2. Fetch villages and create map
-    fetch("http://localhost:8080/api/villages", {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(res => res.json())
-      .then(data => {
-        const map = {};
-        data.forEach(v => {
-          map[v._id] = v.villageName;   // 🔥 ID → Name mapping
-        });
-        setVillagesMap(map);
-      })
-      .catch(() => setError("Failed to load villages"))
+      .catch(err => setError("Failed to load recommendations"))
       .finally(() => setLoading(false));
-
   }, []);
 
   if (loading) return <p>Loading recommendations...</p>;
-  if (error) return <p style={{ color: "red" }}>{error}</p>;
+  if (error)   return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div className="rec-wrapper">
@@ -56,59 +35,51 @@ function Recommendations() {
           <thead>
             <tr>
               <th>Village ID</th>
-              <th>Village Name</th>
               <th>Top Scheme</th>
               <th>Top Score</th>
             </tr>
           </thead>
-
           <tbody>
             {recs.map(r => (
               <tr key={r.villageId}>
                 <td>{r.villageId}</td>
-
-                {/* ✅ Village Name */}
-                <td>{villagesMap[r.villageId] || "Loading..."}</td>
-
                 <td>
+                  {/* Scheme badge with colour */}
                   <span style={{
                     background: schemeColor(r.topScheme),
                     color: "white",
-                    padding: "5px 12px",
-                    borderRadius: "20px",
-                    fontSize: "12px"
+                    padding: "3px 10px",
+                    borderRadius: 12,
+                    fontSize: 12
                   }}>
                     {r.topScheme}
                   </span>
                 </td>
-
-                <td>
-                  {r.topScore
-                    ? Math.round(r.topScore * 100) + "%"
-                    : "—"}
+                <td>{r.topScore
+                  ? Math.round(r.topScore * 100) + "%"
+                  : "—"}
                 </td>
               </tr>
             ))}
           </tbody>
-
         </table>
       </div>
     </div>
   );
 }
 
-// 🎨 Better UI color theme
+// Scheme colour map
 function schemeColor(code) {
   const colors = {
-    SSA: "#4facfe",
-    MSSC: "#00c6ff",
-    SCSS: "#2a5298",
-    PPF: "#1e3c72",
-    PLI: "#43e97b",
-    RPLI: "#38f9d7",
-    RD_TD: "#667eea"
+    SSA:   "#E91E63",
+    MSSC:  "#9C27B0",
+    SCSS:  "#FF9800",
+    PPF:   "#2196F3",
+    PLI:   "#00BCD4",
+    RPLI:  "#4CAF50",
+    RD_TD: "#795548"
   };
-  return colors[code] || "#999";
+  return colors[code] || "#888";
 }
 
 export default Recommendations;
