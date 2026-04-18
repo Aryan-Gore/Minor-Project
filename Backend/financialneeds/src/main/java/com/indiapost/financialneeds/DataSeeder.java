@@ -7,7 +7,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
-// CommandLineRunner runs once after Spring Boot finishes starting
 @Component
 public class DataSeeder implements CommandLineRunner {
 
@@ -22,9 +21,8 @@ public class DataSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        // Only seed if no users exist yet
         if (userRepository.count() == 0) {
-            // Create default USER account
+
             User user = User.builder()
                     .name("Post User")
                     .email("user@indiapost.gov.in")
@@ -35,7 +33,6 @@ public class DataSeeder implements CommandLineRunner {
                     .build();
             userRepository.save(user);
 
-            // Create default ADMIN account
             User admin = User.builder()
                     .name("Post Admin")
                     .email("admin@indiapost.gov.in")
@@ -46,9 +43,11 @@ public class DataSeeder implements CommandLineRunner {
                     .build();
             userRepository.save(admin);
 
+            System.out.println("====================================");
             System.out.println("Default users created:");
             System.out.println("  user@indiapost.gov.in  / user123");
             System.out.println("  admin@indiapost.gov.in / admin123");
+            System.out.println("====================================");
         }
     }
 }

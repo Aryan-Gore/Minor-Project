@@ -12,18 +12,24 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Allow React dev server
+        // Allow your Vite frontend
+        config.addAllowedOrigin("http://localhost:5173");
+        // Also allow port 3000 just in case
         config.addAllowedOrigin("http://localhost:3000");
-        // Allow all HTTP methods: GET, POST, PUT, PATCH, DELETE
+
+        //  Allow all HTTP methods
         config.addAllowedMethod("*");
+
         // Allow all headers including Authorization
         config.addAllowedHeader("*");
-        // Allow the Authorization header to be sent
+
+        // Allow credentials (needed for Authorization header)
         config.setAllowCredentials(true);
 
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        // Apply to all routes
+        UrlBasedCorsConfigurationSource source =
+                new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
+
         return new CorsFilter(source);
     }
 }
