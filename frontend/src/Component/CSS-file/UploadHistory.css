@@ -1,45 +1,118 @@
-/* Wrapper */
+/* ===== WRAPPER ===== */
 .history-wrapper {
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  padding: 50px 15px;
+  background: linear-gradient(180deg, #f8fbff, #ffffff);
 }
 
-/* Card */
+/* ===== CARD ===== */
 .history-card {
-  width: 350px;
-  background: #f5f5f5;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* Title */
-.history-card h2 {
-  text-align: center;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-}
-
-/* List */
-.history-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-/* Items */
-.history-card li {
-  background: white;
-  padding: 12px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  font-size: 14px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  width: 380px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid #eef2f7;
   transition: 0.3s;
 }
 
-/* Hover */
+.history-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+/* ===== TITLE ===== */
+.history-card h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* underline effect */
+.history-card h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 10px;
+}
+
+/* ===== LIST ===== */
+.history-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== ITEM ===== */
+.history-card li {
+  background: #ffffff;
+  padding: 14px 14px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #444;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease;
+  border: 1px solid #f1f1f1;
+  position: relative;
+}
+
+/* left accent bar */
+.history-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 4px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* Hover effect */
 .history-card li:hover {
-  background: #f0f8ff;
-  transform: scale(1.02);
+  transform: translateX(5px);
+  background: #f7fbff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.history-card li:hover::before {
+  opacity: 1;
+}
+
+/* ===== EMPTY STATE (optional div) ===== */
+.history-empty {
+  text-align: center;
+  padding: 30px 10px;
+  color: #888;
+  font-size: 14px;
+}
+
+.history-empty::before {
+  content: "📭";
+  display: block;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+  .history-card {
+    width: 100%;
+    padding: 20px;
+  }
 }

@@ -43,7 +43,9 @@
 .menu a {
   text-decoration: none;
   color: white;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 12px;
   border-radius: 10px;
   transition: 0.3s;
@@ -94,4 +96,22 @@ button {
 button:hover {
   transform: scale(1.05);
   opacity: 0.9;
+}
+
+/* Logout Button */
+.user-logout-btn {
+  margin-top: auto;
+  background: #ff5252 !important;
+  width: 100%;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(255, 82, 82, 0.3);
+}
+
+.user-logout-btn:hover {
+  background: #ff1744 !important;
+  transform: translateY(-2px);
 }

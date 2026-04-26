@@ -1,74 +1,116 @@
-/* Wrapper (center like login page) */
+/* Wrapper */
 .rec-wrapper {
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  margin-top: 40px;
 }
 
 /* Card */
 .rec-card {
-  width: 90%;
-  max-width: 800px;
-  background: #f5f5f5;
+  width: 95%;
+  max-width: 1000px;
+  background: #ffffff;
   padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Title */
 .rec-card h2 {
   text-align: center;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #222;
 }
 
 /* Table */
 .rec-table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 /* Header */
-.rec-table thead {
-  background: linear-gradient(135deg, #4facfe, #00c6ff);
-  color: white;
-}
-
 .rec-table th {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: white;
   padding: 12px;
-  text-align: left;
-  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
-/* Body */
+/* Rows */
 .rec-table td {
   padding: 12px;
   border-bottom: 1px solid #eee;
-  font-size: 14px;
+  text-align: center;
+  transition: 0.2s;
 }
 
-/* Hover effect */
+/* Row hover */
 .rec-table tr:hover {
-  background: #f0f8ff;
+  background: #f4f9ff;
+  transform: scale(1.01);
 }
 
-/* Remove last border */
-.rec-table tr:last-child td {
-  border-bottom: none;
+/* Alternate row color */
+.rec-table tr:nth-child(even) {
+  background: #fafafa;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .rec-card {
-    width: 95%;
+/* Scheme badge */
+.scheme-badge {
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Village clickable */
+.village-link {
+  color: #1976d2;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.village-link:hover {
+  text-decoration: underline;
+  color: #0d47a1;
+}
+
+/* Score highlight */
+.rec-table td:last-child {
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+/* Status text */
+.status-text {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+/* Error */
+.error {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-
-  .rec-table th,
-  .rec-table td {
-    padding: 8px;
-    font-size: 12px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

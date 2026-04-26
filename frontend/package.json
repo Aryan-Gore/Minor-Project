@@ -10,9 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< Updated upstream
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.13.1"
+=======
+    "@tanstack/react-query": "^5.99.0",
+    "axios": "^1.15.0",
+    "lucide-react": "^1.11.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-hook-form": "^7.73.1",
+    "react-router-dom": "^7.14.1",
+    "react-select": "^5.10.2"
+>>>>>>> Stashed changes
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

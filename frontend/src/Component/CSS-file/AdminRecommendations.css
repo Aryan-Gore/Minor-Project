@@ -1,0 +1,99 @@
+/* Wrapper */
+.rec-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Card */
+.rec-card {
+  width: 95%;
+  max-width: 950px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.rec-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.controls select,
+.controls button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.controls button {
+  background: #1976d2;
+  color: white;
+  border: none;
+}
+
+.controls button:hover {
+  background: #1565c0;
+}
+
+/* Table */
+.rec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rec-table th {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: white;
+  padding: 12px;
+}
+
+.rec-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.rec-table tr:hover {
+  background: #f4f9ff;
+}
+
+/* Badge */
+.scheme-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Village link */
+.village-link {
+  color: #1976d2;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.village-link:hover {
+  text-decoration: underline;
+}
+
+/* Status */
+.status-text {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.error {
+  color: red;
+}

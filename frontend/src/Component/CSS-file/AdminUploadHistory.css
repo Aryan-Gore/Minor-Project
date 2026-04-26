@@ -1,0 +1,95 @@
+/* Wrapper */
+.log-wrapper {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.log-wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.controls input,
+.controls select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Table */
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.log-table th {
+  background: #1976d2;
+  color: white;
+  padding: 12px;
+}
+
+.log-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.log-table tr:hover {
+  background: #f5faff;
+}
+
+/* Badges */
+.badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: white;
+  font-size: 12px;
+}
+
+.badge.csv {
+  background: #4caf50;
+}
+
+.badge.excel {
+  background: #2196f3;
+}
+
+/* Failed */
+.failed {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* Errors dropdown */
+details summary {
+  cursor: pointer;
+  color: #1976d2;
+}
+
+details ul {
+  margin-top: 5px;
+  text-align: left;
+  padding-left: 20px;
+  color: #d32f2f;
+}
+
+/* Status */
+.status {
+  text-align: center;
+  margin-top: 40px;
+}

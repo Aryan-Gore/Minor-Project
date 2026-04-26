@@ -1,0 +1,154 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ===== Layout ===== */
+.admin-layout {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: #eef2f7;
+}
+
+/* ===== Sidebar ===== */
+.admin-sidebar {
+  width: 250px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  padding: 25px;
+  color: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 3px 0 15px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.admin-logo {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+/* ===== Menu ===== */
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Links */
+.admin-sidebar nav a {
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hover */
+.admin-sidebar nav a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateX(6px);
+}
+
+/* Active Link */
+.admin-sidebar nav a.active {
+  background: white;
+  color: #4facfe;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Content Area ===== */
+.admin-content {
+  flex: 1;
+  padding: 30px;
+  background: linear-gradient(120deg, #fdfbfb, #ebedee);
+  overflow-y: auto;
+}
+
+/* ===== Cards (Use in all pages) ===== */
+.card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+/* Card hover */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Button hover */
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ===== Scrollbar ===== */
+.admin-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .admin-logo {
+    font-size: 16px;
+  }
+
+  .admin-sidebar nav a {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .admin-content {
+    padding: 15px;
+  }
+}
+
+/* ===== Logout Button ===== */
+.admin-logout-btn {
+    margin-top: 50px;
+    width: 100%;
+    background: #ff5252 !important; /* Overriding default gradient */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(255, 82, 82, 0.3);
+}
+
+.admin-logout-btn:hover {
+    background: #ff1744 !important;
+    transform: translateY(-2px);
+}

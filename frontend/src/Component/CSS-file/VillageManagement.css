@@ -1,0 +1,99 @@
+.vm-wrapper {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.vm-wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.controls input,
+.controls select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.controls button {
+  padding: 8px 12px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Table */
+.vm-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.vm-table th {
+  background: #1976d2;
+  color: white;
+  padding: 12px;
+}
+
+.vm-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.vm-table tr:hover {
+  background: #f5faff;
+}
+
+/* Link */
+.link {
+  color: #1976d2;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+button.edit {
+  background: #4caf50;
+  color: white;
+  margin-right: 5px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+button.delete {
+  background: #f44336;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* Status */
+.status {
+  text-align: center;
+  margin-top: 40px;
+}

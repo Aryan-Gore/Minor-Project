@@ -1,0 +1,168 @@
+
+/* ===== WRAPPER ===== */
+.detail-wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 15px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #f8fbff, #ffffff);
+}
+
+/* ===== HEADER ===== */
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.detail-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #2c3e50;
+}
+
+.sub-text {
+  font-size: 13px;
+  color: #777;
+}
+
+/* ===== BUTTON ===== */
+.mela-btn {
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.mela-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79,172,254,0.35);
+}
+
+/* ===== CARD ===== */
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border: 1px solid #f0f0f0;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.grid p {
+  margin: 0;
+  font-size: 14px;
+  color: #444;
+}
+
+/* ===== SCHEME CARD ===== */
+.scheme-card {
+  background: #f9fbff;
+  padding: 15px;
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 1px solid #e6eefc;
+  transition: 0.3s;
+}
+
+.scheme-card:hover {
+  transform: translateX(5px);
+  background: #f0f8ff;
+}
+
+/* top scheme */
+.scheme-card.top {
+  border: 2px solid #4facfe;
+  background: #eef7ff;
+}
+
+/* header */
+.scheme-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* badge */
+.badge {
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+/* score bar */
+.score-bar {
+  width: 100%;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  border-radius: 10px;
+}
+
+/* reason */
+.reason {
+  font-size: 13px;
+  color: #555;
+}
+
+/* ===== STATUS ===== */
+.status {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+  color: #555;
+}
+
+.status.error {
+  color: #ff4d4f;
+}
+
+/* ===== EMPTY ===== */
+.empty {
+  text-align: center;
+  color: #888;
+  padding: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,98 @@
+/* Wrapper */
+.user-wrapper {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.user-wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Table */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.user-table th {
+  background: #1976d2;
+  color: white;
+  padding: 12px;
+}
+
+/* Rows */
+.user-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+/* Hover */
+.user-table tr:hover {
+  background: #f5faff;
+}
+
+/* Dropdown */
+select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Status */
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.active {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status.inactive {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* Buttons */
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* Enable */
+.btn-enable {
+  background: #4caf50;
+  color: white;
+}
+
+/* Disable */
+.btn-disable {
+  background: #f44336;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* Loading */
+.status-text {
+  text-align: center;
+  margin-top: 40px;
+}

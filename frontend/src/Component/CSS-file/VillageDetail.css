@@ -1,0 +1,104 @@
+/* Page container */
+.village-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.village-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Info card */
+.info-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+/* Section headings */
+.section-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1976d2;
+  border-left: 4px solid #1976d2;
+  padding-left: 10px;
+}
+
+/* Info text */
+.info-card p {
+  margin: 6px 0;
+  color: #444;
+}
+
+/* Demographics grid */
+.demographics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Recommendation cards */
+.recommendation-card {
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #ffffff;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.recommendation-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Top scheme highlight */
+.recommendation-card.top {
+  border: 2px solid #ffc107;
+  background: #fffbea;
+}
+
+/* Scheme title */
+.scheme-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Score bar container */
+.score-bar {
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  margin: 6px 0;
+  overflow: hidden;
+}
+
+/* Score fill */
+.score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  border-radius: 10px;
+}
+
+/* Reason text */
+.reason {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Loading / error */
+.status-text {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
