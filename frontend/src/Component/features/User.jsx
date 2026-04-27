@@ -26,7 +26,7 @@ function User() {
           <li><Link to="reports">Reports</Link></li>
         </ul>
 
-        {/* ✅ Logout button */}
+        {/* Logout button */}
         <button
           onClick={handleLogout}
           style={{ marginTop: "auto", background: "#e53935",

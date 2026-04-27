@@ -7,7 +7,7 @@ function Recommendations() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const token = window.__authToken; // ✅ fixed
+    const token = window.__authToken;
 
     if (!token) { setError("Not logged in"); return; }
 

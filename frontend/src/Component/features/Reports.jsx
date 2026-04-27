@@ -6,11 +6,11 @@ function Reports() {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // ✅ Fetch when district is selected
+
   useEffect(() => {
     if (!district) return;
 
-    const token = window.__authToken; // ✅ fixed
+    const token = window.__authToken;
     setLoading(true);
     setReport(null);
 
@@ -24,7 +24,7 @@ function Reports() {
 
   }, [district]);
 
-  // ✅ PDF download
+
   const downloadPDF = () => {
     const token = window.__authToken;
 
@@ -49,7 +49,6 @@ function Reports() {
       <div className="report-card">
         <h2>District Report</h2>
 
-        {/* ✅ District input — type and press Enter or click button */}
         <div style={{ marginBottom: 20 }}>
           <input
             type="text"
@@ -79,7 +78,6 @@ function Reports() {
               </div>
             ))}
 
-            {/* ✅ PDF download button — only shows when report is loaded */}
             <button
               onClick={downloadPDF}
               style={{ marginTop: 16 }}

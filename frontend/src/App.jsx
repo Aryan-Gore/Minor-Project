@@ -19,7 +19,7 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/admin" element={<Admin />} />
 
-      {/* 👇 USER LAYOUT */}
+      {/* USER LAYOUT */}
       <Route path="/user" element={<User />}>
 
         <Route path="upload" element={<Upload />} />

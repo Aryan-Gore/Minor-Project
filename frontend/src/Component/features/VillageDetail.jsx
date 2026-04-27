@@ -12,7 +12,7 @@ function VillageDetail() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const token = window.__authToken; // ✅ fixed — no more localStorage
+    const token = window.__authToken; //  fixed — no more localStorage
 
     if (!token) {
       navigate("/");

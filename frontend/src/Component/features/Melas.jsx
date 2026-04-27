@@ -13,7 +13,7 @@ function Melas() {
   const [villages, setVillages] = useState([]);
 
   useEffect(() => {
-    const token = window.__authToken; // ✅ fixed
+    const token = window.__authToken;
 
     // Fetch melas list
     fetch("http://localhost:8080/api/melas", {
@@ -34,7 +34,7 @@ function Melas() {
   }, []);
 
   const scheduleMela = () => {
-    const token = window.__authToken; // ✅ fixed
+    const token = window.__authToken;
 
     if (!villageId || !schemeCode || !date || !venue) {
       alert("Please fill all fields"); return;
@@ -70,7 +70,7 @@ function Melas() {
       <div className="mela-card">
         <h2>Melas</h2>
 
-        {/* ✅ Schedule form */}
+
         <div style={{ marginBottom: 24, padding: 16,
                       border: "1px solid #ddd", borderRadius: 8 }}>
           <h3>Schedule New Mela</h3>
@@ -114,7 +114,7 @@ function Melas() {
         ) : (
           <ul>
             {melas.map(m => (
-              <li key={m.id}> {/* ✅ fixed — was m._id */}
+              <li key={m.id}>
                 <strong>{m.villageName}</strong> — {m.schemeCode}<br />
                 <span>📅 {m.scheduledDate}</span><br />
                 <span>📍 {m.venue}</span>

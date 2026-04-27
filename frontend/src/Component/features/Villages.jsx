@@ -10,7 +10,7 @@ function Villages() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = window.__authToken;  // ✅ read from window, not localStorage
+    const token = window.__authToken;  //  read from window, not localStorage
 
     if (!token) {
       navigate("/");  // no token = go back to login

@@ -1,6 +1,6 @@
 import React from "react";
 
-// ✅ This component is now standalone — just pass district as prop
+//  This component is now standalone — just pass district as prop
 // Usage: <DownloadPDF district="North 24 Parganas" />
 // Note: PDF download is also built into Reports.jsx directly
 // Keep this file in case it is used elsewhere
@@ -8,7 +8,7 @@ import React from "react";
 function DownloadPDF({ district }) {
 
   const download = () => {
-    const token = window.__authToken; // ✅ fixed
+    const token = window.__authToken;
 
     if (!district) {
       alert("No district selected"); return;

@@ -43,12 +43,12 @@ function Login() {
       const data = await res.json();
       // data = { token, role, name }
 
-      // ✅ Store token in context AND window (fixes the token problem)
+      // Store token in context AND window (fixes the token problem)
       login(data.token, data.role, data.name);
 
       console.log("Login Success:", data);
 
-      // ✅ Navigate based on role
+      // Navigate based on role
       if (data.role === "ADMIN") {
         navigate("/admin");
       } else {

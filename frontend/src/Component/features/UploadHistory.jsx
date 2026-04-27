@@ -6,7 +6,7 @@ function UploadHistory() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = window.__authToken; // ✅ fixed
+    const token = window.__authToken; //  fixed
 
     fetch("http://localhost:8080/api/uploads", {
       headers: { Authorization: `Bearer ${token}` }
@@ -29,7 +29,7 @@ function UploadHistory() {
         ) : (
           <ul>
             {history.map((h) => (
-              <li key={h.id}> {/* ✅ fixed — was h.uploadId */}
+              <li key={h.id}> {/* fixed — was h.uploadId */}
                 <strong>{h.filename}</strong> — uploaded by {h.uploadedByName}<br />
                 <span>{h.source} | {h.importedRows} imported</span>
                 {h.failedRows > 0 && (

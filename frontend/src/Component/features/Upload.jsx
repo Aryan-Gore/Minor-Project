@@ -23,7 +23,7 @@ function Upload() {
     const formData = new FormData();
     formData.append("file", selectedFile); // key must be "file"
 
-    // ✅ fixed URL — /api/upload/csv or /api/upload/excel
+    // fixed URL — /api/upload/csv or /api/upload/excel
     const endpoint = fileType === "csv"
       ? "http://localhost:8080/api/upload/csv"
       : "http://localhost:8080/api/upload/excel";
@@ -34,7 +34,7 @@ function Upload() {
     fetch(endpoint, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
-      // ✅ DO NOT set Content-Type — browser sets it for FormData
+      // DO NOT set Content-Type — browser sets it for FormData
       body: formData
     })
       .then(res => {
@@ -72,14 +72,14 @@ function Upload() {
         {loading ? "Uploading..." : "Upload"}
       </button>
 
-      {/* ✅ Show result after upload */}
+      {/*  Show result after upload */}
       {result && (
         <div style={{ marginTop: 20, padding: 16,
                       border: "1px solid #ddd", borderRadius: 8 }}>
-          <p>✅ Imported: <strong>{result.importedRows}</strong> of <strong>{result.totalRows}</strong> rows</p>
+          <p> Imported: <strong>{result.importedRows}</strong> of <strong>{result.totalRows}</strong> rows</p>
           {result.failedRows > 0 && (
             <>
-              <p style={{ color: "red" }}>❌ Failed: {result.failedRows} rows</p>
+              <p style={{ color: "red" }}> Failed: {result.failedRows} rows</p>
               <ul style={{ color: "red" }}>
                 {result.errors?.map((e, i) => <li key={i}>{e}</li>)}
               </ul>
