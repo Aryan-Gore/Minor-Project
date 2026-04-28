@@ -85,7 +85,7 @@ function UploadHistory() {
   }
 
   if (error && !loading) {
-    return <p className="status error">❌ {error}</p>;
+    return <p className="status error">{error}</p>;
   }
 
   return (

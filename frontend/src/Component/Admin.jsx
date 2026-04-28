@@ -8,13 +8,20 @@ import {
   Calendar,
   History,
   Users,
-  LogOut
+  LogOut,
+  ChevronLeft,
+  ChevronRight,
+  Menu,
+  X,
+  User as UserIcon
 } from "lucide-react";
+import { useState } from "react";
 
 function Admin() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { logout } = useAuth();
+  const { auth, logout } = useAuth();
+  const [collapsed, setCollapsed] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -26,43 +33,80 @@ function Admin() {
   return (
     <div className="admin-layout">
 
-      {/* SIDEBAR */}
-      <div className="admin-sidebar">
-        <h2 className="admin-logo">Admin Panel</h2>
+      <div className={`admin-sidebar ${collapsed ? "collapsed" : ""}`}>
 
-        <nav>
+        {/* HEADER */}
+        <div className="sidebar-header">
+          {!collapsed && (
+            <div className="admin-logo">
+              <div className="logo-icon">IP</div>
+              <span>India Post</span>
+            </div>
+          )}
+
+          <button
+            className="toggle-btn"
+            onClick={() => setCollapsed(!collapsed)}
+          >
+            {collapsed ? <Menu size={26} /> : <X size={26} />}
+          </button>
+        </div>
+
+        {/* NAVIGATION */}
+        <nav className="sidebar-nav">
           <Link className={isActive("dashboard") ? "active" : ""} to="/admin/dashboard">
-            <LayoutDashboard size={18} /> Dashboard
+            <LayoutDashboard />
+            {!collapsed && <span>Dashboard</span>}
           </Link>
 
           <Link className={isActive("villages") ? "active" : ""} to="/admin/villages">
-            <MapPin size={18} /> Villages
+            <MapPin />
+            {!collapsed && <span>Villages</span>}
           </Link>
 
           <Link className={isActive("recommendations") ? "active" : ""} to="/admin/recommendations">
-            <Target size={18} /> Recommendations
+            <Target />
+            {!collapsed && <span>Recommendations</span>}
           </Link>
 
           <Link className={isActive("mela") ? "active" : ""} to="/admin/mela">
-            <Calendar size={18} /> Schedule Mela
+            <Calendar />
+            {!collapsed && <span>Schedule Mela</span>}
           </Link>
 
           <Link className={isActive("upload-history") ? "active" : ""} to="/admin/upload-history">
-            <History size={18} /> Upload Logs
+            <History />
+            {!collapsed && <span>Upload Logs</span>}
           </Link>
 
           <Link className={isActive("users") ? "active" : ""} to="/admin/users">
-            <Users size={18} /> Users
+            <Users />
+            {!collapsed && <span>Users Management</span>}
           </Link>
         </nav>
 
-        {/* ✅ Logout button */}
-        <button className="admin-logout-btn" onClick={handleLogout}>
-          <LogOut size={18} /> Logout
-        </button>
+        {/* FOOTER */}
+        <div className="sidebar-footer">
+          <div className="user-profile">
+            <div className="avatar">
+              <UserIcon />
+            </div>
+
+            {!collapsed && (
+              <div className="user-info">
+                <span className="user-name">{auth?.name || "Admin"}</span>
+                <span className="user-role">Administrator</span>
+              </div>
+            )}
+          </div>
+
+          <button className="admin-logout-btn" onClick={handleLogout}>
+            <LogOut />
+            {!collapsed && <span>Logout</span>}
+          </button>
+        </div>
       </div>
 
-      {/* CONTENT AREA */}
       <div className="admin-content">
         <Outlet />
       </div>

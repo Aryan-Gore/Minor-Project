@@ -15,11 +15,9 @@ function AdminDashboard() {
   const token = window.__authToken;
 
   useEffect(() => {
-
     const fetchData = async () => {
       try {
-
-        // ✅ If NO login → show demo data
+        // ✅ Demo mode
         if (!token) {
           console.log("Demo mode");
 
@@ -30,9 +28,9 @@ function AdminDashboard() {
           });
 
           setRecentUploads([
-            { uploadId: 1, fileType: "CSV", totalRows: 200, failedRows: 5 },
-            { uploadId: 2, fileType: "Excel", totalRows: 150, failedRows: 2 },
-            { uploadId: 3, fileType: "CSV", totalRows: 300, failedRows: 10 }
+            { id: "1", source: "CSV", totalRows: 200, failedRows: 5 },
+            { id: "2", source: "Excel", totalRows: 150, failedRows: 2 },
+            { id: "3", source: "CSV", totalRows: 300, failedRows: 10 }
           ]);
 
           setTopSchemes([
@@ -44,7 +42,7 @@ function AdminDashboard() {
           return;
         }
 
-        // ✅ If logged in → real API
+        // ✅ API mode
         const [villagesRes, uploadsRes, recRes] = await Promise.all([
           fetch("http://localhost:8080/api/villages", {
             headers: { Authorization: `Bearer ${token}` }
@@ -95,7 +93,6 @@ function AdminDashboard() {
     };
 
     fetchData();
-
   }, [token]);
 
   if (loading) return <p className="dash-loading">Loading Dashboard...</p>;
@@ -145,7 +142,7 @@ function AdminDashboard() {
           <tbody>
             {recentUploads.map(u => (
               <tr key={u.id}>
-                <td title={u.id}>{u.id?.substring(0, 8)}...</td>
+                <td title={u.id}>{u.id?.toString().substring(0, 8)}...</td>
                 <td>{u.source}</td>
                 <td>{u.totalRows}</td>
                 <td>{u.failedRows}</td>

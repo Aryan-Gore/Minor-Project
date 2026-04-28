@@ -27,7 +27,7 @@
 .controls button {
   padding: 8px 12px;
   border: none;
-  background: #1976d2;
+  background: #4facfe;
   color: white;
   border-radius: 8px;
   cursor: pointer;
@@ -44,7 +44,7 @@
 }
 
 .vm-table th {
-  background: #1976d2;
+  background: #4facfe;
   color: white;
   padding: 12px;
 }
@@ -61,7 +61,7 @@
 
 /* Link */
 .link {
-  color: #1976d2;
+  color: #4facfe;
   cursor: pointer;
   font-weight: 600;
 }

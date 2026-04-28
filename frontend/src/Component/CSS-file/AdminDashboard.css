@@ -23,7 +23,7 @@
 
 /* Stat Card */
 .stat-card {
-  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
   color: white;
   padding: 20px;
   border-radius: 14px;
@@ -52,7 +52,7 @@ table {
 }
 
 th {
-  background: #1976d2;
+  background: #4facfe;
   color: white;
   padding: 10px;
 }
@@ -85,7 +85,7 @@ tr:hover {
 }
 
 .scheme-list li b {
-  color: #1976d2;
+  color: #4facfe;
 }
 
 /* Loading */

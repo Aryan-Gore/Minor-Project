@@ -37,7 +37,7 @@
 }
 
 .controls button {
-  background: #1976d2;
+  background: #4facfe;
   color: white;
   border: none;
 }
@@ -53,7 +53,7 @@
 }
 
 .rec-table th {
-  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
   color: white;
   padding: 12px;
 }
@@ -79,7 +79,7 @@
 
 /* Village link */
 .village-link {
-  color: #1976d2;
+  color: #4facfe;
   cursor: pointer;
   font-weight: 600;
 }

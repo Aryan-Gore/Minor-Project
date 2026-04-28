@@ -7,19 +7,24 @@
 
 /* Card */
 .villages-card {
-  width: 90%;
-  max-width: 900px;
-  background: #f5f5f5;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 95%;
+  max-width: 1000px;
+  background: white;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 /* Title */
 .villages-card h1 {
   text-align: center;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #2d3748;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Table */
@@ -32,29 +37,36 @@
 }
 
 /* Header */
-.villages-table thead {
-  background: linear-gradient(135deg, #4facfe, #00c6ff);
-  color: white;
+.villages-table thead tr {
+  background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-.villages-table th {
-  padding: 12px;
+.villages-table thead th {
+  color: white;
+  padding: 15px 12px;
   text-align: left;
-  font-weight: 500;
+  font-weight: 600;
+  border: none;
+  background: transparent;
 }
 
 /* Body */
 .villages-table td {
-  padding: 12px;
-  border-bottom: 1px solid #eee;
+  padding: 14px;
+  border-bottom: 1px solid #edf2f7;
   font-size: 14px;
+  color: #4a5568;
 }
 
 /* Hover */
+.villages-table tr:hover {
+  background: rgba(118, 75, 162, 0.04);
+  transform: translateX(2px);
+  transition: all 0.3s ease;
+}
 
-/* Remove last border */
-.villages-table tr:last-child td {
-  border-bottom: none;
+.villages-table tr:hover td {
+  color: #764ba2;
 }
 
 /* Responsive */

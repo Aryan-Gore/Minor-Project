@@ -38,7 +38,7 @@
 }
 
 .log-table th {
-  background: #1976d2;
+  background: #4facfe;
   color: white;
   padding: 12px;
 }
@@ -78,7 +78,7 @@
 /* Errors dropdown */
 details summary {
   cursor: pointer;
-  color: #1976d2;
+  color: #4facfe;
 }
 
 details ul {

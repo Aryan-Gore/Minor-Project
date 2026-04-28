@@ -8,13 +8,13 @@
 
 /* ===== CARD ===== */
 .history-card {
-  width: 380px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-  backdrop-filter: blur(8px);
-  border: 1px solid #eef2f7;
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
   transition: 0.3s;
 }
 
@@ -39,7 +39,7 @@
   content: "";
   width: 60px;
   height: 3px;
-  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  background: linear-gradient(135deg, #667eea, #764ba2);
   display: block;
   margin: 8px auto 0;
   border-radius: 10px;
@@ -77,7 +77,7 @@
   top: 20%;
   height: 60%;
   width: 4px;
-  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  background: linear-gradient(135deg, #667eea, #764ba2);
   border-radius: 10px;
   opacity: 0;
   transition: 0.3s;

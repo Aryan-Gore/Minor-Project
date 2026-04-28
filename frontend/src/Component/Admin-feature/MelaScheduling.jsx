@@ -45,7 +45,7 @@ function MelaScheduling() {
         return res.json();
       })
       .then(() => {
-        alert("Mela scheduled successfully ✅");
+        alert("Mela scheduled successfully");
         setSelectedVillage("");
         setScheme("");
         setDate("");

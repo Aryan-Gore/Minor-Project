@@ -25,13 +25,26 @@ function Recommendations() {
         if (!res.ok) throw new Error("Failed to load");
         return res.json();
       })
-      .then(data => setRecs(data))
+      .then(data => {
+        console.log("API DATA:", data); // 🔍 Debug
+
+        // fallback: ensure villageName exists
+        const formatted = data.map(r => ({
+          ...r,
+          villageName: r.villageName || "Unknown Village"
+        }));
+
+        setRecs(formatted);
+      })
       .catch(() => setError("Failed to load recommendations"))
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="status-text">Loading recommendations...</p>;
-  if (error) return <p className="status-text error">{error}</p>;
+  if (loading)
+    return <p className="status-text">Loading recommendations...</p>;
+
+  if (error)
+    return <p className="status-text error">{error}</p>;
 
   return (
     <div className="rec-wrapper">
@@ -52,7 +65,7 @@ function Recommendations() {
             {recs.map(r => (
               <tr key={r.villageId}>
                 
-                {/* 🔥 Clickable village name */}
+                {/* ✅ Clickable village name */}
                 <td
                   className="village-link"
                   onClick={() => navigate(`/villages/${r.villageId}`)}

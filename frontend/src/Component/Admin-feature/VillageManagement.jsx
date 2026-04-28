@@ -63,7 +63,7 @@ function VillageManagement() {
   if (error) {
     return (
       <div className="status error">
-        <p>❌ {error}</p>
+        <p>{error}</p>
         {error.includes("logged in") && (
           <button className="vm-login-btn" onClick={() => navigate("/")}>
             Go to Login Page

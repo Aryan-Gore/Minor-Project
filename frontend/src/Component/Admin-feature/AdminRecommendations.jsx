@@ -71,7 +71,7 @@ function Recommendations() {
 
   // ===== ERROR =====
   if (error) {
-    return <p className="status-text error">❌ {error}</p>;
+    return <p className="status-text error">{error}</p>;
   }
 
   return (
