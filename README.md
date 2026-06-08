@@ -170,13 +170,13 @@ Minor Project/
 │           │   ├── models.py
 │           │   ├── scorer.py
 │           │   └── seasonal.py
-│           ├── venv/                    ← auto-generated, do not touch
+│           ├── venv/                    
 │           ├── requirements.txt
 │           ├── .env
 │           ├── run.py
 │           └── README.md
 │
-└── frontend/                            ← React project (your friend)
+└── frontend/                            ← React project 
     ├── src/
     │   ├── api/
     │   │   ├── axiosInstance.js
