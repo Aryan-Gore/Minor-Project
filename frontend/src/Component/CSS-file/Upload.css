@@ -1,18 +1,34 @@
-/* Upload Box */
+/*
+   PREMIUM UPLOAD BOX
+   Matches the Dark Glassmorphism aesthetic
+*/
+
+/* Upload Box - Recessed Drop Zone */
 .upload-box {
-  border: 2px dashed #bbb;
-  border-radius: 12px;
-  padding: 30px;
+  /* Darker, recessed glass background */
+  background: rgba(0, 0, 0, 0.15);
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px; /* Softer corners */
+  padding: 40px 30px; /* Slightly taller for a better drop target */
   text-align: center;
-  background: #fafafa;
   cursor: pointer;
-  transition: 0.3s;
+
+  /* Smooth physics-based transition */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hover */
+/* Hover / Drag-Over State */
 .upload-box:hover {
-  border-color: #4facfe;
-  background: #f0f8ff;
+  /* Brightens up to indicate it's active */
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+
+  /* Subtle inner and outer glow */
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.03),
+              0 10px 20px -10px rgba(0, 0, 0, 0.4);
 }
 
 /* Hide original input */
@@ -22,8 +38,37 @@
 
 /* Label styling */
 .upload-label {
-  color: #666;
-  font-size: 14px;
+  color: #94a3b8; /* Muted premium slate */
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  display: block;
+
+  /* Flexbox setup in case you want to add an SVG icon above the text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Brighten text when the box is hovered */
+.upload-box:hover .upload-label {
+  color: #e2e8f0;
+}
+
+/* Optional: If you wrap a specific word in a span (e.g., "Browse files") */
+.upload-label span {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  transition: text-decoration-color 0.3s ease;
+}
+
+.upload-box:hover .upload-label span {
+  text-decoration-color: #ffffff;
 }

@@ -7,7 +7,6 @@ function Admin() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  // Form state for creating new user
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -71,80 +70,92 @@ function Admin() {
     navigate("/");
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p style={{ color: "#e2e8f0", padding: 24 }}>Loading...</p>;
 
   return (
-    <div style={{ padding: 24 }}>
-      <div style={{ display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center" }}>
-        <h1>Admin Dashboard</h1>
-        <button onClick={handleLogout}
-                style={{ background: "#e53935", color: "white",
-                         border: "none", padding: "8px 16px",
-                         borderRadius: 8, cursor: "pointer" }}>
+    <div className="admin-wrapper">
+      <div className="admin-header">
+        <h1 className="admin-title">Admin Dashboard</h1>
+        <button className="admin-btn admin-btn-danger" onClick={handleLogout}>
           Logout
         </button>
       </div>
 
       {/* Create user form */}
-      <div style={{ border: "1px solid #ddd", borderRadius: 8,
-                    padding: 16, marginBottom: 24 }}>
-        <h3>Create New User</h3>
-        <input placeholder="Name" value={name}
-               onChange={e => setName(e.target.value)}
-               style={{ marginBottom: 8, display: "block", padding: 6 }} />
-        <input placeholder="Email" type="email" value={email}
-               onChange={e => setEmail(e.target.value)}
-               style={{ marginBottom: 8, display: "block", padding: 6 }} />
-        <input placeholder="Password" type="password" value={password}
-               onChange={e => setPassword(e.target.value)}
-               style={{ marginBottom: 8, display: "block", padding: 6 }} />
-        <select value={role} onChange={e => setRole(e.target.value)}
-                style={{ marginBottom: 8, display: "block", padding: 6 }}>
-          <option value="USER">USER</option>
-          <option value="ADMIN">ADMIN</option>
-        </select>
-        <button onClick={createUser}>Create User</button>
+      <div className="admin-card">
+        <h3 className="admin-subtitle">Create New User</h3>
+        <div className="admin-form-group">
+          <input
+            className="admin-input"
+            placeholder="Name"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+          <input
+            className="admin-input"
+            placeholder="Email"
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+          <input
+            className="admin-input"
+            placeholder="Password"
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <select
+            className="admin-select"
+            value={role}
+            onChange={e => setRole(e.target.value)}
+          >
+            <option value="USER">USER</option>
+            <option value="ADMIN">ADMIN</option>
+          </select>
+        </div>
+        <button className="admin-btn admin-btn-primary" onClick={createUser}>
+          Create User
+        </button>
       </div>
 
       {/* Users table */}
-      <h3>All Users</h3>
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
-        <thead>
-          <tr style={{ background: "#1a3a5c", color: "white" }}>
-            <th style={{ padding: 10 }}>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map(u => (
-            <tr key={u.id}
-                style={{ borderBottom: "1px solid #eee" }}>
-              <td style={{ padding: 10 }}>{u.name}</td>
-              <td>{u.email}</td>
-              <td>{u.role}</td>
-              <td style={{ color: u.isActive ? "green" : "red" }}>
-                {u.isActive ? "Active" : "Inactive"}
-              </td>
-              <td>
-                {u.isActive && (
-                  <button
-                    onClick={() => deactivateUser(u.id)}
-                    style={{ background: "#e53935", color: "white",
-                             border: "none", padding: "4px 10px",
-                             borderRadius: 6, cursor: "pointer" }}>
-                    Deactivate
-                  </button>
-                )}
-              </td>
+      <div className="admin-card">
+        <h3 className="admin-subtitle">All Users</h3>
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map(u => (
+              <tr key={u.id}>
+                <td>{u.name}</td>
+                <td>{u.email}</td>
+                <td>{u.role}</td>
+                <td className={u.isActive ? "status-active" : "status-inactive"}>
+                  {u.isActive ? "Active" : "Inactive"}
+                </td>
+                <td>
+                  {u.isActive && (
+                    <button
+                      className="admin-btn admin-btn-danger"
+                      onClick={() => deactivateUser(u.id)}
+                    >
+                      Deactivate
+                    </button>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

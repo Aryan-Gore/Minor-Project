@@ -1,59 +1,110 @@
-/* Wrapper (center content like login page) */
+/*
+   PREMIUM VILLAGES TABLE THEME
+   Matches the Dark Glassmorphism aesthetic
+*/
+
+/* Wrapper */
 .villages-wrapper {
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 60px; /* Matched breathing room for premium spacing */
 }
 
-/* Card */
+/* Card - Frosted Glass Effect */
 .villages-card {
   width: 90%;
   max-width: 900px;
-  background: #f5f5f5;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 35px;
+  border-radius: 20px;
+
+  /* Glassmorphism background */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* Deep, soft shadows */
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Title */
 .villages-card h1 {
   text-align: center;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  /* Metallic/Chrome text gradient */
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  width: 100%;
 }
 
 /* Table */
 .villages-table {
   width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
+  /* Changed to separate to allow perfectly rounded corners on hover states */
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
 }
 
 /* Header */
 .villages-table thead {
-  background: linear-gradient(135deg, #4facfe, #00c6ff);
-  color: white;
+  /* Sophisticated dark header instead of bright blue */
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .villages-table th {
-  padding: 12px;
+  padding: 16px 12px;
   text-align: left;
   font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #64748b; /* Muted premium slate */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+/* Smooth top corners for the header */
+.villages-table th:first-child { border-top-left-radius: 12px; }
+.villages-table th:last-child { border-top-right-radius: 12px; }
 
 /* Body */
 .villages-table td {
-  padding: 12px;
-  border-bottom: 1px solid #eee;
-  font-size: 14px;
+  padding: 16px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04); /* Ultra-subtle dividers */
+  color: #e2e8f0;
+  font-size: 14.5px;
+  letter-spacing: 0.3px;
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Hover */
+/* Hover effect - Soft glow instead of heavy background shift */
+.villages-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Keep the left and right edges nicely rounded on hover */
+.villages-table tbody tr:hover td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.villages-table tbody tr:hover td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
 
 /* Remove last border */
-.villages-table tr:last-child td {
+.villages-table tbody tr:last-child td {
   border-bottom: none;
 }
 
@@ -61,11 +112,16 @@
 @media (max-width: 600px) {
   .villages-card {
     width: 95%;
+    padding: 20px;
   }
 
   .villages-table th,
   .villages-table td {
-    padding: 8px;
-    font-size: 12px;
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .villages-table th {
+    font-size: 11px;
   }
 }

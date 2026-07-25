@@ -1,54 +1,77 @@
-/* Full screen center */
-body{
-    margin: 0;
-    padding: 0;
+/* 
+   PREMIUM LOGIN THEME 
+   Aesthetic: Dark Glassmorphism 
+*/
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Poppins", sans-serif;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Deep, sophisticated dark gradient background */
+  background: radial-gradient(circle at top left, #1e293b, #0f172a);
+  color: #e2e8f0;
+}
+
 .login {
   height: 100vh;
- 
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f7fb;
+  /* Adds subtle noise or mesh feeling if you add background images later */
+  position: relative;
 }
 
-/* Login box */
+/* Login box - Frosted Glass Effect */
 .login-box {
-  width: 340px;
-  padding: 35px;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 380px; /* Slightly wider for a more elegant aspect ratio */
+  padding: 40px;
+  border-radius: 20px;
+  
+  /* Glassmorphism background */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  
+  /* Deep, soft shadows for floating effect */
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+              
   text-align: center;
-  animation: fadeIn 0.8s ease;
-  transition: 0.3s;
+  /* Premium, buttery-smooth entry animation */
+  animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Subtle hover lift */
 .login-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
-/* Fade animation */
-@keyframes fadeIn {
+/* Premium Entry Animation */
+@keyframes fadeSlideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-
-/* Tabs */
+/* Tabs - Pill design */
 .tabs {
   display: flex;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  background: #f1f1f1;
-  overflow: hidden;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  position: relative;
 }
 
 /* Tab buttons */
@@ -56,70 +79,84 @@ body{
   flex: 1;
   padding: 12px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
   background: transparent;
-  font-weight: 600;
-  transition: 0.3s;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Active tab */
 .tabs .dark {
-  background: #4facfe;
-  color: white;
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  /* Removed the scale effect for a more grounded, professional feel */
 }
 
 /* Heading */
 .login-box h2 {
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 24px;
+  margin-bottom: 25px;
+  font-size: 22px;
   font-weight: 600;
-  letter-spacing: 1px;
-  font-family: "Poppins", sans-serif;
-  position: relative;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  
+  /* Metallic/Chrome text gradient */
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-/* Underline animation */
-.login-box h2{
-  text-transform: uppercase;
- 
-}
-
-
-
-/* Inputs */
+/* Inputs - Sleek and recessed */
 .login-box input {
   width: 100%;
-  padding: 12px;
+  padding: 14px 16px;
   margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  outline: none;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #ffffff;
   font-size: 14px;
-  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Placeholder styling for premium feel */
+.login-box input::placeholder {
+  color: #64748b;
 }
 
 /* Input focus animation */
 .login-box input:focus {
-  border-color: #4facfe;
-  box-shadow: 0 0 8px rgba(79, 172, 254, 0.3);
-  transform: scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.25);
+  /* Elegant glow ring instead of aggressive scaling */
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05); 
 }
 
-/* Button */
+/* Button - Striking contrast */
 .login-button {
   width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  border-radius: 8px;
-  border: none;
-  background: linear-gradient(135deg, #4facfe, #00c6ff);
-  color: white;
-  font-size: 16px;
+  padding: 14px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Bright metallic gradient */
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  color: #0f172a;
+  
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
@@ -127,48 +164,59 @@ body{
 /* Button hover */
 .login-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+  box-shadow: 0 10px 20px -10px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, #ffffff, #e2e8f0);
 }
 
 /* Click effect */
 .login-button:active {
-  transform: scale(0.96);
+  transform: translateY(1px);
 }
 
-/* Shine animation */
+/* Subtle premium shine animation */
 .login-button::after {
   content: "";
   position: absolute;
   top: 0;
   left: -100%;
-  width: 100%;
+  width: 50%;
   height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-  transition: 0.5s;
+  background: linear-gradient(
+    to right, 
+    transparent, 
+    rgba(255, 255, 255, 0.4), 
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .login-button:hover::after {
-  left: 100%;
+  left: 150%;
 }
 
-
-/* alert  */
-
-
+/* Premium Alert */
 .alert {
   position: fixed;
-  top: 20px;
-  right: 20px;
-
-  background: linear-gradient(135deg, #4facfe, #00c6ff);
-  color: white;
-  padding: 12px 18px;
-  border-radius: 8px;
+  top: 24px;
+  right: 24px;
+  
+  /* Glassmorphism alert matching the theme */
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  
+  padding: 16px 24px;
+  border-radius: 12px;
   font-size: 14px;
-  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
 
-  overflow: hidden; /* important */
-  animation: slideIn 0.4s ease;
+  overflow: hidden;
+  animation: slideInPremium 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Bottom progress line */
@@ -179,30 +227,25 @@ body{
   left: 0;
   height: 3px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.8);
-
-  /* 🔥 Progress animation */
-  animation: progress 2s linear forwards;
+  /* Gradient progress bar */
+  background: linear-gradient(90deg, transparent, #cbd5e1);
+  animation: progressPremium 3s linear forwards;
 }
 
-/* Slide in */
-@keyframes slideIn {
+/* Smooth Slide In */
+@keyframes slideInPremium {
   from {
-    transform: translateX(120%);
+    transform: translateX(120%) scale(0.95);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
     opacity: 1;
   }
 }
 
 /* Progress bar shrink */
-@keyframes progress {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0%;
-  }
+@keyframes progressPremium {
+  from { width: 100%; }
+  to { width: 0%; }
 }
